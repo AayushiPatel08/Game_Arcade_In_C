@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
+#include <windows.h>
 char square[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
 int checkwin();
@@ -7,6 +8,7 @@ void board();
 
 int TicTac()
 {
+    system("color 30");
     int player = 1, i, choice;
 
     char mark;
@@ -19,6 +21,8 @@ int TicTac()
         scanf("%d", &choice);
 
         mark = (player == 1) ? 'X' : 'O';
+    {
+        system("color 70");
 
         if (choice == 1 && square[1] == '1')
             square[1] = mark;
@@ -54,6 +58,7 @@ int TicTac()
             player--;
             getch();
         }
+    }
         i = checkwin();
 
         player++;
@@ -62,13 +67,21 @@ int TicTac()
     board();
 
     if (i == 1)
+        {
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BACKGROUND_INTENSITY|BACKGROUND_RED);
         printf("==>\aPlayer %d win ", --player);
+        }
     else
+    {SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BACKGROUND_INTENSITY|BACKGROUND_RED);
         printf("==>\aGame draw");
+    }
 
     getch();
 
+    system("cls");
+    main();
     return 0;
+
 }
 
 /*********************************************

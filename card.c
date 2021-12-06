@@ -4,11 +4,10 @@
 char place[10]={'0','1','2','3','4','5','6','7','8','9'};
 
 
-
-
 int greekcard()
 {
-	system("Color 0A");
+
+	system("Color E0");
 
 
 	//game
@@ -55,7 +54,10 @@ int greekcard()
 
 	if (key != 'Q' && key != 'P' && key != 'R') goto Intro;
 
-	if (key == 'Q')	exit(1);
+	if (key == 'Q'){
+        system("cls");
+    main();
+	};
 	if (key == 'R')
 	{
 		system("cls");
@@ -469,6 +471,8 @@ int greekcard()
 			goto home;
 		}
 	}
+
+
 
 	return 0;
 }

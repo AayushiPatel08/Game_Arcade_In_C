@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <time.h>
 
+
 #include "Tictakto.c"
 #include "snake.c"
 #include "quiz_Final.c"
 #include "card.c"
 
 int main(){
+    system("color 70");
 	    int opt;
 
-    while(opt != 0){
+    do{
 
-        printf("VIT\t\t\t\t Welcome to Vit game arcade \n");
+        printf("VIT\t\t\t\t Welcome to VIT game arcade \n");
 		printf("Pune\t\t\t\t Choose the game you wanna play :) \n\n\n");
         printf(" \t\t\t\t 1. Quiz Game \n "
                "\t\t\t\t 2. Snake Game  \n "
@@ -37,7 +39,7 @@ int main(){
                 printf("[!!] Invalid Input, Try Again \n");
                 break;
         }
-    }
+    }while(opt!=4);
 }
 
 

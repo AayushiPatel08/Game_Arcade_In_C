@@ -88,8 +88,11 @@ int quiz()
 	}
 	else
 	{
+	    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BACKGROUND_GREEN|BACKGROUND_INTENSITY);
 		printf("You scored %d points!!!\n", points);
 	}
 
 	getch();
+
+    main();
 }

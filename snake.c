@@ -42,6 +42,7 @@ coordinate head, bend[500],food,body[30];
 
 int snake()
 {
+    system("color 07");
 
     char key;
 
@@ -69,7 +70,9 @@ int snake()
 
     Move();   //initialing initial bend coordinate
 
+
     return 0;
+
 
 }
 
@@ -225,15 +228,20 @@ void load()
 }
 void Down()
 {
+
     int i;
     for(i=0; i<=(head.y-bend[bend_no].y)&&len<length; i++)
     {
         GotoXY(head.x,head.y-i);
         {
-            if(len==0)
+            if(len==0){
+
                 printf("v");
-            else
+        }
+            else{
+
                 printf("=");
+            }
         }
         body[len].x=head.x;
         body[len].y=head.y-i;
@@ -283,6 +291,7 @@ void ExitGame()
 }
 void Food()
 {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BACKGROUND_GREEN|BACKGROUND_INTENSITY);
     if(head.x==food.x&&head.y==food.y)
     {
         length++;
@@ -499,6 +508,9 @@ void record()
         while(c!=EOF);
     }
     fclose(info);
+    getch();
+    system("cls");
+    main();
 }
 int Score()
 {
